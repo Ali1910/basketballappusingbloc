@@ -10,10 +10,7 @@ class basketballcubit extends Cubit<basketballappstate> {
   Color teamb = Colors.black;
   Color lcolor = Colors.red;
   Color wcolor = Colors.green;
-
-  basketballcubit() : super(initialstate());
-  increaseteamaonepoint() {
-    TeamA += 1;
+  void ColorChecker() {
     if (TeamA > TeamB) {
       teama = wcolor;
       teamb = lcolor;
@@ -24,81 +21,42 @@ class basketballcubit extends Cubit<basketballappstate> {
       teama = Colors.black;
       teamb = Colors.black;
     }
+  }
+
+  basketballcubit() : super(initialstate());
+  increaseteamaonepoint() {
+    TeamA += 1;
+    ColorChecker();
     emit(successstate());
   }
 
   increaseteambonepoint() {
     TeamB += 1;
-    if (TeamA > TeamB) {
-      teama = wcolor;
-      teamb = lcolor;
-    } else if (TeamA < TeamB) {
-      teama = lcolor;
-      teamb = wcolor;
-    } else {
-      teama = Colors.black;
-      teamb = Colors.black;
-    }
+    ColorChecker();
     emit(successstate());
   }
 
   increaseteamatwopoint() {
     TeamA += 2;
-    if (TeamA > TeamB) {
-      teama = wcolor;
-      teamb = lcolor;
-    } else if (TeamA < TeamB) {
-      teama = lcolor;
-      teamb = wcolor;
-    } else {
-      teama = Colors.black;
-      teamb = Colors.black;
-    }
+    ColorChecker();
     emit(successstate());
   }
 
   increaseteambtwopoint() {
     TeamB += 2;
-    if (TeamA > TeamB) {
-      teama = wcolor;
-      teamb = lcolor;
-    } else if (TeamA < TeamB) {
-      teama = lcolor;
-      teamb = wcolor;
-    } else {
-      teama = Colors.black;
-      teamb = Colors.black;
-    }
+    ColorChecker();
     emit(successstate());
   }
 
   increaseteamathreepoint() {
     TeamA += 3;
-    if (TeamA > TeamB) {
-      teama = wcolor;
-      teamb = lcolor;
-    } else if (TeamA < TeamB) {
-      teama = lcolor;
-      teamb = wcolor;
-    } else {
-      teama = Colors.black;
-      teamb = Colors.black;
-    }
+    ColorChecker();
     emit(successstate());
   }
 
   increaseteambthreepoint() {
     TeamB += 3;
-    if (TeamA > TeamB) {
-      teama = wcolor;
-      teamb = lcolor;
-    } else if (TeamA < TeamB) {
-      teama = lcolor;
-      teamb = wcolor;
-    } else {
-      teama = Colors.black;
-      teamb = Colors.black;
-    }
+    ColorChecker();
     emit(successstate());
   }
 
